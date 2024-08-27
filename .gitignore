@@ -1,0 +1,6 @@
+# Ignore build folders
+secrets/
+.idea/
+__pycache__/
+
+# Ignore IDE configuration files
