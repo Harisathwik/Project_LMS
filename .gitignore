@@ -4,3 +4,4 @@ secrets/
 __pycache__/
 
 # Ignore IDE configuration files
+*.json
