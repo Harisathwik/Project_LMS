@@ -1,4 +1,4 @@
 mesop
 gunicorn
-pyrebase4
+Pyrebase4
 firebase-admin
