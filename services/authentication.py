@@ -13,13 +13,9 @@ def authenticate_user(event: me.ClickEvent):
         global_state.user_email = temp_state.user_email
         global_state.user_id = user['localId']
 
-
         # User is authenticated, you can access user data here
-        me.text(f"User authenticated: {global_state.user_email}")
+        me.navigate("/dashboard")  # Redirect to Main Page after login
 
-        me.text(f"User ID: {user['localId']}")
-        me.navigate("/")  # Redirect to Main Page after login
-        return None
     except Exception as e:
         global_state.error_message = f"Authentication error: {e}"
         me.navigate("/error")
