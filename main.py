@@ -5,6 +5,7 @@ from app.error_page import error
 from app.logout_page import logout
 from app.profile_page import profile
 from app.dashboard_page import dashboard
+from app.chatwithus_page import chat_with_us
 from app.landing_page import landing
 from app.about_page import about
 
@@ -32,6 +33,10 @@ def signup_page():
 @me.page(path="/dashboard")
 def dashboard_page():
     dashboard()
+
+@me.page(path="/chatwithus")
+def chatbot_page():
+    chat_with_us()
 
 @me.page(path="/logout")
 def logout_page():
