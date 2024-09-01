@@ -1,5 +1,4 @@
 import mesop as me
-# from app import global_state
 from app.login_page import login
 from app.signup_page import signup
 from app.error_page import error
@@ -7,6 +6,7 @@ from app.logout_page import logout
 from app.profile_page import profile
 from app.dashboard_page import dashboard
 from app.landing_page import landing
+from app.about_page import about
 
 @me.page(path="/profile")
 def profile_page():
@@ -16,6 +16,10 @@ def profile_page():
 @me.page(path="/")
 def main():
     landing()
+
+@me.page(path="/about")
+def about_page():
+    about()
 
 @me.page(path="/login")
 def login_page():

@@ -22,7 +22,7 @@ def landing():
 
         )
                   )
-        me.button("About", style=me.Style(
+        me.button("About", on_click=lambda event: me.navigate("/about"), style=me.Style(
             color="white",
             display="flex",
             font_size=15,
