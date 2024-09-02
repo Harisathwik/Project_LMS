@@ -8,6 +8,7 @@ from app.dashboard_page import dashboard
 from app.chatwithus_page import chat_with_us
 from app.landing_page import landing
 from app.about_page import about
+from app.subjects_page import subjects
 
 @me.page(path="/profile")
 def profile_page():
@@ -37,6 +38,10 @@ def dashboard_page():
 @me.page(path="/chatwithus")
 def chatbot_page():
     chat_with_us()
+
+@me.page(path="/subjects")
+def subjects_page():
+    subjects()
 
 @me.page(path="/logout")
 def logout_page():
