@@ -85,7 +85,7 @@ def side_navigation():
                 me.button("Account", style=me.Style(
                     margin=me.Margin.symmetric(vertical=30, horizontal=10),
                     height=40, width=150, color="Black", background="white"))
-            # S E T T I N G S
+            # C H A T W I T H  U S
             with me.box(style=me.Style(
                 display="flex",
                 justify_content="center",
@@ -97,11 +97,11 @@ def side_navigation():
                 flex_direction="row"
                 # margin=me.Margin.symmetric(vertical=20)
             )):
-                me.icon("settings", style=me.Style(
+                me.icon("chat", style=me.Style(
                     margin=me.Margin.symmetric(vertical=30, horizontal=10), color="Black", display="flex", background="white",
                     border_radius=25, width=40, height=40, justify_content="center",
                     flex_direction="row", align_items="center"))
-                me.button("Settings", style=me.Style(
+                me.button("Chat With Us", on_click=lambda event: me.navigate("/chatwithus"), style=me.Style(
                     margin=me.Margin.symmetric(vertical=30, horizontal=10),
                     height=40, width=150, color="Black", background="white"))
             # L O G O U T
