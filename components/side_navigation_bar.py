@@ -61,7 +61,7 @@ def side_navigation():
                     margin=me.Margin.symmetric(vertical=30, horizontal=10), color="Black", display="flex",
                     background="white", border_radius=25, width=40, height=40, justify_content="center",
                     align_items="center"))
-                me.button("Subjects", style=me.Style(
+                me.button("Subjects",on_click=lambda event: me.navigate("/subjects"), style=me.Style(
                     margin=me.Margin.symmetric(vertical=30, horizontal=10),
                     height=40, width=150,
                     color="Black",
