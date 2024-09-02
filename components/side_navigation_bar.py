@@ -21,6 +21,26 @@ def side_navigation():
                 display="flex",
                 font_size=20
             ))
+            # H O M E
+            with me.box(style=me.Style(
+                    display="flex",
+                    justify_content="center",
+                    align_items="center",
+                    height=80,
+                    width=220,
+                    # border_radius=20,
+                    # background="violet",
+                    flex_direction="row"
+                    # margin=me.Margin.symmetric(vertical=20)
+            )):
+                me.icon("home", style=me.Style(
+                    margin=me.Margin.symmetric(vertical=30, horizontal=10), color="Black", display="flex",
+                    background="white",
+                    border_radius=25, width=40, height=40, justify_content="center",
+                    align_items="center"))
+                me.button("Home", on_click=lambda event: me.navigate("/"), style=me.Style(
+                    margin=me.Margin.symmetric(vertical=30, horizontal=10),
+                    height=40, width=150, color="Black", background="white"))
             # P R O F I L E
             with me.box(
                     style=me.Style(
@@ -66,25 +86,6 @@ def side_navigation():
                     height=40, width=150,
                     color="Black",
                     background="white"))
-            # A C C O U N T
-            with me.box(style=me.Style(
-                display="flex",
-                justify_content="center",
-                align_items="center",
-                height=80,
-                width=220,
-                # border_radius=20,
-                # background="violet",
-                flex_direction="row"
-                # margin=me.Margin.symmetric(vertical=20)
-            )):
-                me.icon("dashboard", style=me.Style(
-                    margin=me.Margin.symmetric(vertical=30, horizontal=10), color="Black", display="flex", background="white",
-                    border_radius=25, width=40, height=40, justify_content="center",
-                    align_items="center"))
-                me.button("Account", style=me.Style(
-                    margin=me.Margin.symmetric(vertical=30, horizontal=10),
-                    height=40, width=150, color="Black", background="white"))
             # C H A T W I T H  U S
             with me.box(style=me.Style(
                 display="flex",
