@@ -1,5 +1,7 @@
 import mesop as me
 from components import on_sidenav_click, SideNavState
+from app import global_state
+
 
 
 def side_navigation():
@@ -39,7 +41,7 @@ def side_navigation():
                 me.icon("person", style=me.Style(margin=me.Margin.symmetric(vertical=30, horizontal=10), color="black",
                         display="flex", background="white", border_radius=25, width=40, height=40,
                         justify_content="center", align_items="center"))
-                me.button("Profile",on_click=lambda event: me.navigate("/profile"), style=me.Style(
+                me.button("Profile", on_click=lambda event: me.navigate("/profile"), style=me.Style(
                     margin=me.Margin.symmetric(vertical=30, horizontal=10),
                     height=40,
                     width=150,
@@ -61,7 +63,7 @@ def side_navigation():
                     margin=me.Margin.symmetric(vertical=30, horizontal=10), color="Black", display="flex",
                     background="white", border_radius=25, width=40, height=40, justify_content="center",
                     align_items="center"))
-                me.button("Subjects", style=me.Style(
+                me.button("Subjects", on_click=lambda event: me.navigate("/subjects"), style=me.Style(
                     margin=me.Margin.symmetric(vertical=30, horizontal=10),
                     height=40, width=150,
                     color="Black",

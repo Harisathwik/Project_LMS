@@ -7,6 +7,7 @@ from app.logout_page import logout
 from app.profile_page import profile
 from app.dashboard_page import dashboard
 from app.landing_page import landing
+from app.subjects_page import subjects
 
 @me.page(path="/profile")
 def profile_page():
@@ -28,6 +29,10 @@ def signup_page():
 @me.page(path="/dashboard")
 def dashboard_page():
     dashboard()
+
+@me.page(path="/subjects")
+def subjects_page():
+    subjects()
 
 @me.page(path="/logout")
 def logout_page():
