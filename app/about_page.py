@@ -26,12 +26,58 @@ def about():
                 display="flex",
                 justify_content="center",
                 align_items="start",
+
         )
         ):
-            me.markdown("#ProjectLMS", style=me.Style(color="white", font_size=30, font_family="monospace"))
-            me.markdown(
-                "Learning Management System is a platform that helps students to learn and grow in their respective fields. This is a student friendly application aims to help students in their learning process.",
-                style=me.Style(color="white", font_family="montserrat", ))
+            # Top Navigation Bar Box
+            with me.box(style=me.Style(
+                    # background="green",
+                    flex_direction="row",
+                    display="flex",
+                    justify_content="center",
+                    gap=6,
+                    width=me.viewport_size().width // 2 - 300,
+                    height=40,
+
+            )
+            ):
+                me.button("Home", on_click=lambda event: me.navigate("/"), style=me.Style(
+                    color="white",
+                    display="flex",
+                    font_size=15,
+                    font_family="monospace",
+                )
+                          )
+                me.button("About", on_click=lambda event: me.navigate("/about"), style=me.Style(
+                    color="white",
+                    display="flex",
+                    font_size=15,
+                    font_family="monospace"))
+
+                me.button("Classroom", on_click=lambda event: me.navigate("/dashboard"),
+                          style=me.Style(color="white", display="flex", background="radial-gradient(#0B0C10, #1F2833)", font_size=15,
+                                         border_radius=12,
+                                         height=37,
+                                         font_family="monospace"))
+
+            # About ProjectLMS Box
+            with me.box(style=me.Style(
+                    # background="lightyellow",
+                    # padding=me.Padding.all(25),
+                    width=me.viewport_size().width // 2 + 60,
+                    height=me.viewport_size().height - 100,
+                    flex_direction="column",
+                    display="flex",
+                    justify_content="center",
+                    justify_self="center",
+            )
+            ):
+                # Project LMS Details
+                me.markdown("#ProjectLMS", style=me.Style(color="white", font_size=30, font_family="monospace"))
+                me.markdown(
+                    "Learning Management System is a platform that helps students to learn and grow in their respective fields. This is a student friendly application aims to help students in their learning process.",
+                    style=me.Style(color="white", font_family="montserrat", ))
+
         # Meet Team Section
         with me.box(style=me.Style(
                 background="content-box linear-gradient(#0B0C10,black)",
