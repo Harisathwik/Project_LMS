@@ -7,11 +7,13 @@ from app import global_state, temp_state
 def authenticate_user(event: me.ClickEvent):
     try:
         user = authentication.sign_in_with_email_and_password(temp_state.user_email, temp_state.user_password)
-
         global_state.logged_status = True
-        global_state.user_name = temp_state.user_name
         global_state.user_email = temp_state.user_email
         global_state.user_id = user['localId']
+
+        # TO-DO:FETCH USERNAME FROM DATABASE
+        global_state.user_name = db.collection('UserProfileDetails').document(global_state.user_id).get().to_dict()['name']
+
 
         # User is authenticated, you can access user data here
         me.navigate("/dashboard")  # Redirect to Main Page after login
