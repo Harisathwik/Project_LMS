@@ -1,6 +1,6 @@
 import mesop as me
 from app import global_state
-from app.views import on_blur_email, on_blur_password, on_blur_name
+from services.views import on_blur_email, on_blur_password, on_blur_name
 from services.authentication import create_user
 
 def signup():
