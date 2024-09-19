@@ -1,44 +1,12 @@
 import mesop as me
 from app import global_state
 from components.side_navigation_bar import side_navigation
-
+from components.popupbox_page import popup_box
 
 def subjects():
     # Check if user is logged in
     if not global_state.logged_status:
-        # Background styling
-        with me.box(style=me.Style(
-                background="content-box radial-gradient(#0B0C10, #1F2833)",
-                width=me.viewport_size().width,
-                height=me.viewport_size().height,
-                display="flex",
-                justify_content="center",
-                align_items="center")
-        ):
-            # Pop-Up box for login and signup
-            with me.box(style=me.Style(
-                    background="black",
-                    display="flex",
-                    width=500,
-                    height=200,
-                    justify_content="center",
-                    align_items="center",
-                    flex_direction="column",
-                    border_radius=20,
-                    box_shadow="4px 4px 4px grey",
-                    gap=20, )
-            ):
-                me.markdown("Login to access the classroom", style=me.Style(color="white", font_size=15))
-                with me.box(style=me.Style(
-                        # background="yellow",
-                        display="flex",
-                        flex_direction="row",
-                        gap=20)
-                ):
-                    me.button("Login", type="raised", on_click=lambda event: me.navigate("/login"),
-                              style=me.Style(background="radial-gradient(#0B0C10, #1F2833)", color="white"))
-                    me.button("SignUp", type="raised", on_click=lambda event: me.navigate("/signup"),
-                              style=me.Style(background="radial-gradient(#0B0C10, #1F2833)", color="white"))
+        popup_box(actions=["Log in to access the classroom.", "Login", "/login", "Back to Home", "/"])
     else:
         # Background Box and Style
         with me.box(
@@ -132,7 +100,7 @@ def subjects():
 
                         ),
                     )
-                    me.button("Mathematics", style=me.Style(font_weight="bold",
+                    me.button("Mathematics",on_click=lambda event: me.navigate("/mathematics"), style=me.Style(font_weight="bold",
                                                                  font_family="Jetbrains Mono",
                                                                  font_size=20
                                                                  ), )

@@ -1,6 +1,7 @@
 from app import global_state
-from app.views import logout_click
+from services.views import logout_click
 import mesop as me
+
 
 def logout():
     if not global_state.logged_status:
@@ -71,4 +72,3 @@ def logout():
                               style=me.Style(background="radial-gradient(#0B0C10, #1F2833)", color="white"))
                     me.button("No", type="raised", on_click=lambda event: me.navigate("/"),
                               style=me.Style(background="radial-gradient(#0B0C10, #1F2833)", color="white"))
-

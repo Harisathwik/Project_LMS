@@ -7,18 +7,13 @@ from app import global_state, temp_state
 def authenticate_user(event: me.ClickEvent):
     try:
         user = authentication.sign_in_with_email_and_password(temp_state.user_email, temp_state.user_password)
-
         global_state.logged_status = True
-        global_state.user_name = temp_state.user_name
         global_state.user_email = temp_state.user_email
         global_state.user_id = user['localId']
 
-        # TO-DO:FETCH USERNAME FROM DATABASE
-        user_details = db.collection('UserProfileDetails').document(global_state.user_id).get().to_dict()
-        global_state.user_name = user_details['name']
-        global_state.user_role = user_details['role']
-        global_state.enrolled_subjects = user_details['enrolledSubjects']
-        global_state.subjects = user_details['subjects']
+        # FETCH USERNAME FROM DATABASE
+        global_state.user_name = db.collection('UserProfileDetails').document(global_state.user_id).get().to_dict()['name']
+
 
         # User is authenticated, you can access user data here
         me.navigate("/dashboard")  # Redirect to Main Page after login
@@ -36,11 +31,9 @@ def create_user_in_firestore(user_id, email, name):
         users_ref.document(user_id).set({
             'email': email,
             'name': name,
-            'role': 'student',  # You can set roles like 'student', 'teacher', etc.
-            'enrolledSubjects': ['mathematics', 'programming'],
-            'subjects': ['mathematics', 'programming', 'astrophysics', 'biology']
+            'role': 'student'  # You can set roles like 'student', 'teacher', etc.
         })
-        # me.text(f"User {email} added to Firestore.")
+        me.text(f"User {email} added to Firestore.")
     except Exception as e:
         me.text(f"Error adding user to Firestore: {e}")
 
@@ -55,7 +48,7 @@ def create_user(event: me.ClickEvent):
         global_state.user_id = user['localId']
         global_state.user_name = temp_state.user_name
         global_state.user_email = temp_state.user_email
-        # me.text(f"User ID: {user['localId']}")
+        me.text(f"User ID: {user['localId']}")
         # Example usage after user signup
         create_user_in_firestore(global_state.user_id, global_state.user_email, global_state.user_name)
         me.navigate("/")  # Redirect to Main Page after user

@@ -6,7 +6,6 @@ def reset_state(temp_state):
     temp_state.user_email = ""
     temp_state.user_password = ""
     temp_state.user_name = ""
-    temp_state.enrolled_subjects = []
     temp_state.error_message = "Page Not Found"
     temp_state.logged_status = False
 
