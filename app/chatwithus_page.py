@@ -1,7 +1,5 @@
 import random
 import time
-
-import mesop as me
 import mesop.labs as mel
 from app import global_state
 from components.side_navigation_bar import side_navigation

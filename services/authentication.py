@@ -11,7 +11,7 @@ def authenticate_user(event: me.ClickEvent):
         global_state.user_email = temp_state.user_email
         global_state.user_id = user['localId']
 
-        # TO-DO:FETCH USERNAME FROM DATABASE
+        # FETCH USERNAME FROM DATABASE
         global_state.user_name = db.collection('UserProfileDetails').document(global_state.user_id).get().to_dict()['name']
 
 
