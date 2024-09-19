@@ -1,7 +1,7 @@
 import mesop as me
 from services.authentication import authenticate_user
 from app import global_state
-from app.views import on_blur_email, on_blur_password
+from services.views import on_blur_email, on_blur_password
 from components.popupbox_page import popup_box
 
 def login():
